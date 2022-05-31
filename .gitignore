@@ -12,6 +12,7 @@ dist/
 *.tar.bz2
 resume-en.pdf
 resume-zh.pdf
+resume-np-en.pdf
 resume-np-zh.pdf
 *.gz
 *.jpg
