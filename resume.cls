@@ -132,14 +132,16 @@
 }
 
 % Non-numbered pages
-\pagestyle{empty}
+%\pagestyle{empty}
 
-% Last-page style
-\def\ps@lastpage{%
-  \def\@oddfoot{\textcolor{gray}{\footnotesize\@fileinfo}\hfil}%
-  \def\@evenfoot{\textcolor{gray}{\footnotesize\@fileinfo}\hfil}%
-}
-\AtEndDocument{\thispagestyle{lastpage}}
+% % Last-page style
+% \def\ps@lastpage{%
+%   \def\@oddfoot{\textcolor{gray}{\footnotesize\@fileinfo}\hfil}%
+%   \def\@evenfoot{\textcolor{gray}{\footnotesize\@fileinfo}\hfil}%
+% }
+% \AtEndDocument{\thispagestyle{lastpage}}
+
+\pagestyle{plain}
 
 % No paragraph indentation
 \setlength{\parindent}{0em}
@@ -258,6 +260,7 @@
 \newcommand*{\fileinfo}[1]{\def\@fileinfo{#1}}
 
 % Photo: \photo{<diameter>}{<photo>}
+%\newcommand{\photo}[2]{\def\@photo{#2}\def\@photodiameter{#1}}
 \newcommand{\photo}[2]{\def\@photo{#2}\def\@photodiameter{#1}}
 
 % Address
@@ -311,26 +314,27 @@
 
 % Render resume header
 \newcommand*{\makeheader}{
-  \ifdef{\@photodiameter}{
-    \begin{minipage}{\@photodiameter}
-      \tikz\path[fill overzoom image={\@photo}]
-        circle[radius=0.5\linewidth];
-    \end{minipage}
-    \hspace{1em}
-  }{}
   \ifundef{\@photodiameter}{%
     \begin{minipage}{\linewidth}
   }{%
     \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
   }
-    \user{\@firstname}{\@lastname}
+  \user{\@firstname}{\@lastname}
     \ifdef{\@tagline}{%
       \medskip \\
       \resumetitle{\@tagline}
     }{}
     \medskip \\
-    \@profile
+    \@profile \\
   \end{minipage}
+  \hspace{3em}
+  \ifdef{\@photodiameter}{
+    \begin{minipage}{\@photodiameter}
+      \tikz\path[fill overzoom image={\@photo}]
+        % circle[radius=0.5\linewidth];
+        rectangle(\linewidth-2em,\linewidth);
+    \end{minipage}
+  }{}
 }
 
 %%
