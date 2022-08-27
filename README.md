@@ -1,19 +1,4 @@
-My Resume and LaTeX Template
-============================
-
-**Weitian LI** `<wt@liwt.net>`
-
-Introduction
-------------
-This repository holds my [resume](resume-zh+en.pdf) (Chinese and English),
-the [resume LaTeX template](resume.cls),
-and the [Font Awesome 5 LaTeX style](fontawesome5/fontawesome5.sty).
-
-This template is based on the
-[YACC: Another Awesome CV](https://github.com/darwiin/yaac-another-awesome-cv)
-by Christophe Roger, which is further based on the
-[Plasmati Graduate CV](https://www.latextemplates.com/template/plasmati-graduate-cv)
-by Alessandro Plasmati.
+This resume LaTex template is forked from [liweitianux/resume](https://github.com/liweitianux/resume).
 
 Usage
 -----
@@ -35,7 +20,7 @@ Windows.  I'm glad to accept suggestions and updates.
 
 Font Awesome 5
 --------------
-I wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py),
+WeiTian wrote a simple tool [`make-fontawesome5.py`](fontawesome5/make-fontawesome5.py),
 which will download the latest icon list from the
 [Font Awesome](https://github.com/FortAwesome/Font-Awesome) project
 and then generate the LaTeX style file for using the latest
